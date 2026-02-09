@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一封信</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Ma Shan Zheng', 'KaiTi', 'STKaiti', 'SimKai', 'Microsoft YaHei', serif;
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .envelope {
+            background: white;
+            width: 90%;
+            max-width: 800px;
+            padding: 4rem 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            transform: rotate(-1deg);
+            transition: transform 0.5s ease;
+        }
+
+        .envelope:hover {
+            transform: rotate(0deg);
+        }
+
+        .envelope::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            z-index: 0;
+        }
+
+        .letter-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .letter-title {
+            font-family: 'Ma Shan Zheng', 'KaiTi', 'STKaiti', cursive;
+            font-size: 2.8rem;
+            color: #333;
+            font-weight: normal;
+            letter-spacing: 0.2rem;
+        }
+
+        .letter-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .letter-content {
+            position: relative;
+            z-index: 1;
+            line-height: 2.2;
+            font-size: 1.35rem;
+            color: #333;
+            text-indent: 2em;
+            background: #fafafa;
+            padding: 2.5rem;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            font-family: 'STKaiti', 'KaiTi', 'SimKai', 'Microsoft YaHei', serif;
+            letter-spacing: 0.05rem;
+        }
+
+        .letter-signature {
+            margin-top: 3rem;
+            text-align: right;
+            font-size: 1.4rem;
+            font-family: 'Ma Shan Zheng', cursive;
+            letter-spacing: 0.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .envelope {
+                padding: 2rem 1.5rem;
+            }
+            .letter-title {
+                font-size: 2.2rem;
+                letter-spacing: 0.15rem;
+            }
+            .letter-content {
+                padding: 1.5rem;
+                font-size: 1.15rem;
+                line-height: 2;
+            }
+            .letter-signature {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 音频标签：静音+自动播放+循环 -->
+    <audio id="bgMusic" autoplay loop muted preload="auto">
+        <source src="assets/小星星.MP3" type="audio/mpeg">
+        <source src="assets/小星星.MP3" type="audio/mp3">
+        您的浏览器不支持音频播放。
+    </audio>
+
+    <div class="envelope">
+        <div class="letter-header">
+            <h1 class="letter-title">To:amei</h1>
+        </div>
+        <div class="letter-content">
+            <p>首先祝我们两个人情人节快乐,这是我们两个人在一起的第一个情人节,也是我19年来过的第一个情人节,因为我们现在属于异地就不能见面了，真的很遗憾。到今天，我们差不多在一起刚好两个月，说实话现在你已经是我处过最久的了，哈哈哈当然我们还有很长的路可以一起走，没有关系的我们手拉手一起走。我知道我的嘴有些碎，还不怎么会说话，时不时就会惹你生气，我愿意克制一下的，请你以后可以多多包涵。</p>
+            <p>回想起第一次见你是在及第考队的时候,你对我的第一印象就是很可爱,并且还跳得很好（真的是发自内心的夸）,但是当时对你没有任何想法,也没想到过我们能有什么交集。第二次就是《一起闯》第一次联排,你站在我的右边,还是有一点小激动的,可惜忘记你叫啥名字了哈哈哈,只是知道你姓王,再然后一点一点的,嗯。后来你总是找我说话,虽然那时候我已经似乎察觉出来你的小心思,但是我喜欢和你在一起聊天,感觉跟你聊天还有些开心,但是我有些时候聊着聊着我就容易把话题聊死,真的好久不和女那种闲聊了,后来我就问我发小咋整咋整,也没怎么帮上忙吧,就想着走一步看一步,期间我动摇过,我怕我把事情想得太过美好,到最后会摔得很惨。好在你让我看到期望。然后你过生日,我之前又没送过crush生日礼物（我发誓真没撒谎）,我很急,想送大方合适且与众不同的礼物,但是感觉好难,也是问了好多朋友,后来想起来你朋友圈发的那个耳钉,才打算下来买那个,然后那个香水就是别人帮忙推荐的。</p>
+            <p>后来慢慢的我们在一起了,我承认我有些敏感,很幼稚,而且很没安全感（真的没安全感T T可能有些怕失去）。可能和你想要的不太一样吧,我不想让你受委屈,所有我会尽力做得更好。虽然有些事情我不懂不会,但我可以学习可以积累。但我需要时间，如果你愿意接受愿意等的话。然后我们去沈阳的那段时间，你说你得重新认识一下我了，我想说的是我之前没有过，真的都是凭感觉。相信我，我是有分寸的一个人，也不是个随便的人。我知道你也不是。</p>
+            <p>好了，我想说的话基本就这些吧，是的没有一句情话，这集属于真心话吧。后边的路是什么样的我不知道，我会保持着一颗清醒的大脑走下去。</p>
+            <div class="letter-signature">
+                子越老师<br>
+                <span>2026年2月</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 页面载入动画
+        document.addEventListener('DOMContentLoaded', () => {
+            const envelope = document.querySelector('.envelope');
+            envelope.style.opacity = '0';
+            envelope.style.transform = 'translateY(50px) rotate(-1deg)';
+            
+            setTimeout(() => {
+                envelope.style.transition = 'all 0.8s ease';
+                envelope.style.opacity = '1';
+                envelope.style.transform = 'translateY(0) rotate(-1deg)';
+            }, 100);
+        });
+
+        // 核心：自动取消静音（实现真正的自动播放）
+        window.addEventListener('DOMContentLoaded', async () => {
+            const audio = document.getElementById('bgMusic');
+            
+            // 先确保音频已开始播放（静音状态）
+            if (audio.paused) {
+                try {
+                    await audio.play();
+                } catch (e) {
+                    console.log('静音自动播放尝试:', e);
+                }
+            }
+
+            // 延迟取消静音（绕过浏览器限制）
+            setTimeout(() => {
+                audio.muted = false; // 取消静音
+                audio.volume = 0.8;  // 设置音量（0-1之间，0.8是80%音量）
+            }, 500);
+
+            // 兜底方案：如果还是没声音，点击页面任意位置取消静音
+            document.addEventListener('click', () => {
+                audio.muted = false;
+                audio.volume = 0.8;
+            }, { once: true });
+        });
+    </script>
+</body>
+</html>
